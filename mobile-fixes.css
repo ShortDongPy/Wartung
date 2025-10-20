@@ -1,0 +1,617 @@
+/* ===================================
+   MOBILE OPTIMIERUNGEN FÜR FEILER WARTUNGSSOFTWARE
+   =================================== */
+
+/* Basis-Anpassungen für kleinere Bildschirme */
+@media (max-width: 768px) {
+    
+    /* ========== ALLGEMEINE ANPASSUNGEN ========== */
+    
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 8px;
+    }
+    
+    /* Verhindere horizontales Scrollen */
+    * {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+    
+    /* ========== HEADER ========== */
+    
+    .header {
+        padding: 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .header-left h2 {
+        font-size: 18px;
+    }
+    
+    .header-left p {
+        font-size: 12px;
+    }
+    
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    
+    .user-info {
+        flex: 1;
+        min-width: 0;
+        padding: 6px 10px;
+    }
+    
+    .user-info > div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+    
+    /* ========== BUTTONS ========== */
+    
+    .btn {
+        padding: 10px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    
+    .btn-small {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    #logoutBtn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    /* Verhindere Button-Überlappung */
+    .machine-actions,
+    .section-header {
+        flex-wrap: wrap;
+    }
+    
+    .machine-actions .btn {
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+    
+    /* ========== TABS ========== */
+    
+    .tabs {
+        padding: 0 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 4px;
+    }
+    
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .tab {
+        padding: 10px 16px;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+    
+    /* ========== STATS GRID ========== */
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+    
+    .stat-card {
+        padding: 16px;
+    }
+    
+    .stat-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    
+    .stat-value {
+        font-size: 28px;
+    }
+    
+    .stat-title {
+        font-size: 12px;
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+    
+    /* ========== MACHINES SECTION ========== */
+    
+    .machines-section {
+        padding: 16px 12px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .section-header h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    
+    .section-header .btn {
+        width: 100%;
+    }
+    
+    /* ========== SEARCH & FILTER ========== */
+    
+    .search-filter {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 8px;
+    }
+    
+    .search-box {
+        min-width: 100%;
+    }
+    
+    .search-box input {
+        font-size: 14px;
+        padding: 10px 12px 10px 36px;
+    }
+    
+    .filter-select {
+        width: 100%;
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+    
+    /* ========== MACHINES GRID ========== */
+    
+    .machines-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .machine-card {
+        padding: 14px;
+    }
+    
+    .machine-name {
+        font-size: 16px;
+    }
+    
+    .machine-id {
+        font-size: 11px;
+    }
+    
+    .machine-info {
+        font-size: 12px;
+    }
+    
+    .machine-info div {
+        margin-bottom: 6px;
+    }
+    
+    .status-badge {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    
+    /* ========== MODAL ========== */
+    
+    .modal {
+        padding: 0;
+        align-items: flex-start;
+    }
+    
+    .modal-content {
+        padding: 20px 16px;
+        margin: 0;
+        border-radius: 0;
+        max-width: 100%;
+        width: 100%;
+        max-height: 100vh;
+        min-height: 100vh;
+    }
+    
+    .modal-header {
+        margin-bottom: 16px;
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 10;
+        padding-bottom: 12px;
+    }
+    
+    [data-theme="dark"] .modal-header {
+        background: var(--gray-100);
+    }
+    
+    .modal-header h3 {
+        font-size: 18px;
+    }
+    
+    .close-modal {
+        font-size: 32px;
+        padding: 4px;
+    }
+    
+    /* ========== FORMS ========== */
+    
+    .form-group {
+        margin-bottom: 16px;
+    }
+    
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    /* ========== FLOOR PLAN ========== */
+    
+    .floor-plan-container {
+        padding: 12px;
+    }
+    
+    .floor-plan-controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .zoom-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .zoom-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .zoom-level {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .floor-plan-controls .btn {
+        width: 100%;
+    }
+    
+    .floor-plan-wrapper {
+        max-height: calc(100vh - 450px);
+        min-height: 300px;
+    }
+    
+    .machine-marker {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .machine-marker-icon {
+        font-size: 12px;
+    }
+    
+    .available-machines {
+        padding: 12px;
+    }
+    
+    .available-machines h4 {
+        font-size: 14px;
+    }
+    
+    .available-machine-item {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    /* ========== PARTS GRID ========== */
+    
+    .parts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+    }
+    
+    .part-card {
+        padding: 12px;
+        padding-top: 40px;
+    }
+    
+    .part-name {
+        font-size: 13px;
+    }
+    
+    .part-stock {
+        font-size: 12px;
+    }
+    
+    /* ========== NOTIFICATIONS ========== */
+    
+    .notifications-panel {
+        padding: 16px;
+    }
+    
+    .notifications-panel h3 {
+        font-size: 16px;
+    }
+    
+    .notification-item {
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .notification-time {
+        font-size: 11px;
+    }
+    
+    /* ========== TEMPLATES ========== */
+    
+    .template-card {
+        padding: 14px;
+    }
+    
+    .template-card .btn-small {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+    
+    .component-item {
+        padding: 12px;
+    }
+    
+    .component-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .badge {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+    
+    /* ========== SCANNER ========== */
+    
+    #qr-reader {
+        max-width: 100%;
+    }
+    
+    #manualSearchInput {
+        font-size: 14px;
+    }
+    
+    /* ========== LOGIN ========== */
+    
+    .login-box {
+        padding: 24px 20px;
+        margin: 10px;
+    }
+    
+    .logo h1 {
+        font-size: 24px;
+    }
+    
+    .logo p {
+        font-size: 13px;
+    }
+    
+    /* ========== OFFLINE INDICATOR ========== */
+    
+    .offline-indicator {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        padding: 10px 16px;
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    /* ========== REPORTS ========== */
+    
+    #reportStats {
+        padding: 16px;
+    }
+    
+    #reportStats > div {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    #reportStats > div > div {
+        padding: 12px;
+        background: white;
+        border-radius: 8px;
+    }
+    
+    /* ========== USERS & MACHINE TYPES ========== */
+    
+    #usersGrid > div,
+    #machineTypesGrid > div {
+        padding: 14px;
+    }
+    
+    /* ========== KOMPONENTENLISTE IN WARTUNG ========== */
+    
+    #componentsContainer .component-item,
+    #editComponentsContainer .component-item {
+        padding: 12px;
+        position: relative;
+    }
+    
+    #componentsContainer .component-item button,
+    #editComponentsContainer .component-item button {
+        position: static;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    /* ========== PREVENT TEXT OVERFLOW ========== */
+    
+    .machine-name,
+    .machine-id,
+    .part-name,
+    .template-card strong {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    /* Long text in details */
+    #machineDetailsContent,
+    #maintenanceContent,
+    #assignTemplateContent {
+        word-break: break-word;
+    }
+    
+    /* ========== FLOOR PLAN SELECTOR ========== */
+    
+    #floorPlanSelector > div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #floorPlanSelector label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+    
+    #floorPlanSelect {
+        width: 100% !important;
+        min-width: 100% !important;
+        flex: none !important;
+    }
+    
+    #deleteFloorPlanBtn {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+/* Extra kleine Bildschirme (Smartphones im Hochformat) */
+@media (max-width: 480px) {
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-right {
+        flex-wrap: wrap;
+    }
+    
+    #logoutBtn {
+        width: 100%;
+        margin-top: 8px;
+    }
+    
+    .stat-value {
+        font-size: 24px;
+    }
+    
+    .machine-actions {
+        flex-direction: column;
+    }
+    
+    .machine-actions .btn {
+        width: 100%;
+    }
+    
+    .modal-content {
+        padding: 16px 12px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Verhindert Auto-Zoom auf iOS */
+    }
+    
+    /* Buttons in Modals stack vertical */
+    .modal-content > div > div[style*="display: flex"] {
+        flex-direction: column !important;
+    }
+    
+    .modal-content > div > div[style*="display: flex"] > * {
+        width: 100% !important;
+        flex: none !important;
+    }
+}
+
+/* Landscape Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    .machines-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .parts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Touch-optimierte Elemente */
+@media (hover: none) and (pointer: coarse) {
+    
+    /* Größere Touch-Targets */
+    .btn,
+    .tab,
+    .machine-marker,
+    .available-machine-item {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    input[type="checkbox"],
+    input[type="radio"] {
+        min-width: 24px;
+        min-height: 24px;
+    }
+    
+    .close-modal {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
